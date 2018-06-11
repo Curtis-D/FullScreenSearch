@@ -7,7 +7,7 @@ var FullScreenSearch = function() {
         getDescription() { return "Makes Discord's search results full screen. Also allows you to select and copy the matched result."; }
         getVersion() { return "1.0.0"; }
         getAuthor() { return "Green"; }
-        getUpdateLink() { return "https://raw.githubusercontent.com/Greentwilight/FullScreenSearch/master/FullScreenSearch.plugin.js"; }
+        getUpdateLink() { return "https://raw.githubusercontent.com/Curtis-D/FullScreenSearch/master/FullScreenSearch.plugin.js"; }
         load() {}
         stop() {}
 
@@ -27,8 +27,6 @@ var FullScreenSearch = function() {
 
         initialize() {
             this.initialized = true;           
-            const DirectMessages = InternalUtilities.WebpackModules.findByDisplayName("ExternalLink");
-            console.log(DirectMessages);
             PluginUtilities.checkForUpdate(this.getName(), this.getVersion(), this.getUpdateLink());
             PluginUtilities.showToast(this.getName() + " " + this.getVersion() + " has started.");
         }
