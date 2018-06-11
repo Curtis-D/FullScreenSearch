@@ -5,7 +5,7 @@ var FullScreenSearch = function() {
     return class FullScreenSearch {
         getName() { return "FullScreenSearch"; }
         getDescription() { return "Makes Discord's search results full screen. Also allows you to select and copy the matched result."; }
-        getVersion() { return "1.0.0"; }
+        getVersion() { return "1.0.1"; }
         getAuthor() { return "Green"; }
         getUpdateLink() { return "https://raw.githubusercontent.com/Curtis-D/FullScreenSearch/master/FullScreenSearch.plugin.js"; }
         load() {}
@@ -31,6 +31,11 @@ var FullScreenSearch = function() {
             PluginUtilities.showToast(this.getName() + " " + this.getVersion() + " has started.");
         }
 
+        onSwitch() {
+            if(document.querySelector(".search-results-wrap")){ document.querySelector(".search-results-wrap").style.display = "none"; }
+            if(document.querySelector(".messages-wrapper")){ document.querySelector(".messages-wrapper").parentNode.style.display = "inherit"; }
+        }
+
         observer(e){
             
             if(e.addedNodes[0] && e.addedNodes[0].classList && e.addedNodes[0].classList.contains("search-results-wrap")){
@@ -47,6 +52,7 @@ var FullScreenSearch = function() {
 
             if(e.addedNodes[0] && e.addedNodes[0].classList && (e.addedNodes[0].classList.contains("results-wrapper") || e.addedNodes[0].classList.contains("empty-results-wrap"))){
                 e.addedNodes[0].parentNode.parentNode.parentNode.style.display = "inherit";
+                e.addedNodes[0].parentNode.parentNode.parentNode.previousSibling.style.display = "none";
                 for(var interactionsCounter = 0; interactionsCounter < e.addedNodes[0].querySelectorAll(".sink-interactions.clickable").length; interactionsCounter++){
                     let element = e.addedNodes[0].querySelectorAll(".sink-interactions.clickable")[interactionsCounter];
                     if(element.parentNode.parentNode.classList.contains("hit")){ element.style.display = "none"; }
