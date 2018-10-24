@@ -69,7 +69,7 @@ var FullScreenSearch = function() {
                 if(channelNameTextContent.slice(-18) === " - Search Messages"){
                     document.querySelector(".channelName-3stJzi").lastChild.textContent = channelNameTextContent.slice(0, channelNameTextContent.length - 18);
                 }
-                document.querySelector(".messages-wrapper").parentNode.style.display = "inherit";
+                document.querySelector(".da-messagesWrapper").parentNode.style.display = "inherit";
             }
         }
 
