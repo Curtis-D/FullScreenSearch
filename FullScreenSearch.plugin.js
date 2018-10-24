@@ -5,7 +5,7 @@ var FullScreenSearch = function() {
     return class FullScreenSearch {
         getName() { return "FullScreenSearch"; }
         getDescription() { return "Makes Discord's search results full screen. Also allows you to select and copy the matched result."; }
-        getVersion() { return "1.0.1"; }
+        getVersion() { return "1.0.2"; }
         getAuthor() { return "Green"; }
         getUpdateLink() { return "https://raw.githubusercontent.com/Curtis-D/FullScreenSearch/master/FullScreenSearch.plugin.js"; }
         load() {}
