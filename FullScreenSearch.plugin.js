@@ -5,7 +5,7 @@ var FullScreenSearch = function() {
     return class FullScreenSearch {
         getName() { return "FullScreenSearch"; }
         getDescription() { return "Makes Discord's search results full screen. Also allows you to select and copy the matched result."; }
-        getVersion() { return "1.0.2"; }
+        getVersion() { return "1.0.3"; }
         getAuthor() { return "Green"; }
         getUpdateLink() { return "https://raw.githubusercontent.com/Curtis-D/FullScreenSearch/master/FullScreenSearch.plugin.js"; }
         load() {}
@@ -33,7 +33,7 @@ var FullScreenSearch = function() {
 
         onSwitch() {
             if(document.querySelector(".search-results-wrap")){ document.querySelector(".search-results-wrap").style.display = "none"; }
-            if(document.querySelector(".messages-wrapper")){ document.querySelector(".messages-wrapper").parentNode.style.display = "inherit"; }
+            if(document.querySelector(".messagesWrapper-3lZDfY")){ document.querySelector(".messagesWrapper-3lZDfY").parentNode.style.display = "inherit"; }
         }
 
         observer(e){
@@ -44,7 +44,7 @@ var FullScreenSearch = function() {
                 e.addedNodes[0].style.width = "100%";
                 e.addedNodes[0].addEventListener("click", (e) => {
                     if(e.target.classList.contains("jump-button")){
-                        document.querySelector(".messages-wrapper").parentNode.style.display = "inherit";
+                        document.querySelector(".messagesWrapper-3lZDfY").parentNode.style.display = "inherit";
                         document.querySelector(".search-results-wrap").style.display = "none";
                     }
                 });
